@@ -11,7 +11,15 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
     "lint:css": "stylelint --fix \"**/*.{vue,css,sass,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
-    "spellcheck": "cspell lint --dot --gitignore --color --cache --show-suggestions \"src/**/*.@(html|js|cjs|mjs|ts|tsx|css|scss|md|vue)\""
+    "spellcheck": "cspell lint --dot --gitignore --color --cache --show-suggestions \"src/**/*.@(html|js|cjs|mjs|ts|tsx|css|scss|md|vue)\"",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue,ts,tsx}": [
+      "pnpm format",
+      "pnpm lint:css",
+      "pnpm spellcheck"
+    ]
   },
   "dependencies": {
     "pinia": "^2.1.7",
@@ -29,6 +37,8 @@
     "cspell": "^8.0.0",
     "eslint": "^8.49.0",
     "eslint-plugin-vue": "^9.17.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.1.0",
     "npm-run-all2": "^6.1.1",
     "postcss-html": "^1.5.0",
     "postcss-scss": "^4.0.9",
