@@ -20,16 +20,18 @@ import HelloWorld from './components/HelloWorld.vue'
   <RouterView />
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 header {
   line-height: 1.5;
   max-height: 100vh;
+
+  .logo {
+    display: block;
+    margin: 0 auto 2rem;
+  }
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+
 
 nav {
   width: 100%;
@@ -56,7 +58,7 @@ nav a:first-of-type {
   border: 0;
 }
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
   header {
     display: flex;
     place-items: center;
@@ -77,7 +79,6 @@ nav a:first-of-type {
     text-align: left;
     margin-left: -1rem;
     font-size: 1rem;
-
     padding: 1rem 0;
     margin-top: 1rem;
   }
